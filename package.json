@@ -8,15 +8,19 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": "^4.16.2",
-    "mongoose": "^4.13.7",
     "bcryptjs": "^2.4.3",
-    "cors": "^2.8.4",
-    "jsonwebtoken": "^8.1.0",
+    "binance": "^1.1.2",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.7",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1"
   },
   "author": "Brad Newman",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "binance": "^1.1.2"
+  }
 }
