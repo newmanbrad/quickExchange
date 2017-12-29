@@ -8,6 +8,7 @@
     "start": "node server"
   },
   "dependencies": {
+    "angular-cli": "^1.0.0-beta.28.3",
     "bcryptjs": "^2.4.3",
     "binance": "^1.1.2",
     "bluebird": "^3.5.1",
