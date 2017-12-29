@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const config = require('../config/dev');
 
 // User Schema
@@ -10,11 +10,11 @@ const userSchema = mongoose.Schema({
     email: {
         type: String,
         required: true
-    }
-    userName: {
+    },
+    username: {
         type: String,
         required: true
-    }
+    },
     password: {
         type: String,
         required: true
@@ -40,6 +40,6 @@ module.exports.addUser = function (newUser, callback) {
             newUser.save(callback);
         });
     });
-}
+};
 
 

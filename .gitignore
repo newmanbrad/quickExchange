@@ -1,5 +1,5 @@
 node_modules/
-
+.idea
 # Logs and databases #
 ######################
 *.log

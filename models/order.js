@@ -1,13 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const config = require('../config/dev');
 
 // Order Schema
 const orderSchema = new Schema({
-    orderId: {
-        type: String
-    },
     symbol: {
         type: String,
         required: true
@@ -47,4 +44,8 @@ const Order = module.exports = mongoose.model('Order', orderSchema);
 
 module.exports.getOrderById = function (orderId, callback) {
     Order.findById(orderId, callback);
+};
+
+module.exports.addOrder = function (newOrder, callback) {
+    newOrder.save(callback);
 };
