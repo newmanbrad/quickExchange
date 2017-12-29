@@ -27,8 +27,8 @@ module.exports.getUserById = function (userId, callback) {
     User.findById(userId, callback);
 };
 
-module.exports.getUserByUserName = function (username, callback) {
-    const query = { userName : username };
+module.exports.getUserByUsername = function (username, callback) {
+    const query = { username : username };
     User.findOne(query, callback);
 };
 
@@ -41,5 +41,13 @@ module.exports.addUser = function (newUser, callback) {
         });
     });
 };
+
+module.exports.comparePassword = (candidatePassword, hash, callback) => {
+    bcrypt.compare(candidatePassword, hash)
+        .then((isMatch) => {
+            callback(null, isMatch);
+        }).catch((err) => console.log('There was an error with authentication.'));
+};
+
 
 
