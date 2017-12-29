@@ -30,9 +30,9 @@
     }
   ],
   "styles": [
-    "../node_modules/bootstrap/dist/css/bootstrap.css",
-    "styles.scss"
-  ]
+    "../node_modules/bootstrap/scss/bootstrap.scss",
+    "assets/scss/main.scss"
+  ],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
@@ -58,7 +58,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+    }
   }
 }
