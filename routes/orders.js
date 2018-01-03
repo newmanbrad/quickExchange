@@ -50,14 +50,27 @@ router.get('/allBookTickers', (req, res) => {
 // limit (optional)	integer	Default and maximum of 100
 router.get('/depth', (req, res) => {
 
-    if(req.limit === undefined) { req.limit = 100; }
+    if(req.query.limit === undefined) { req.query.limit = 100; }
 
-    binanceRest.depth({ symbol: req.symbol, limit: req.limit })
+    binanceRest.depth({ symbol: req.query.symbol, limit: req.query.limit })
         .then((data) => {
             res.json({success: true, data: data});
         })
         .catch((err) => {
             res.json({success: false, data: err});
+        });
+});
+
+// Get Ticker
+// symbol: string
+router.get('/getSymbolTicker', (req, res) => {
+
+    binanceRest.ticker24hr({ symbol: req.query.symbol })
+        .then((data) => {
+            res.json({success: true, data: data});
+        })
+        .catch((err) => {
+            res.json({success: false, data: err, symbol: req.symbol });
         });
 });
 
