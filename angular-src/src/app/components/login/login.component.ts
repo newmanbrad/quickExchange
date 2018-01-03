@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss'],
   providers: [ AuthService ]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   constructor( private _authService: AuthService, private router: Router ) { }
 
@@ -37,11 +37,6 @@ export class LoginComponent implements OnInit {
       }
     });
 
-  }
-
-  onSubmit(userData) {
-    this.submitting = true;
-    this.login(userData);
   }
 
 }
